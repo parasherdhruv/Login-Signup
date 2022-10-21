@@ -9,7 +9,7 @@ const checkAuth = require("../middleware/check-auth");
 
 //GET REQUEST
 
-router.get("/",  (req, res, next) => {
+router.get("/",checkAuth, (req, res, next) => {
   User.find()
     .then((result) => {
       res.status(200).json({
