@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
         const verify = jwt.verify(token, 'this is dummy text');
         next();
     } catch (err) {
-        res.status(200).json({
+        res.status(401).json({
 
             msg: 'invalid token'
         })
